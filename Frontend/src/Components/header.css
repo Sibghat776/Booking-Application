@@ -1,0 +1,9 @@
+/* Hide the left sidebar (Today, Yesterday section) */
+.no-sidebar .rdrDefinedRangesWrapper {
+  display: none !important;
+}
+
+/* Expand the calendar to full width */
+.no-sidebar .rdrCalendarWrapper {
+  width: 100% !important;
+}

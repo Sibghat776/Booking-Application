@@ -1,0 +1,66 @@
+.searchBox {
+    width: 30%;
+    position: sticky;
+    background-color: #ecf39e;
+    color: #132a13;
+    padding: 1.8%;
+    top: 1%;
+    border-radius: .6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: fit-content !important;
+}
+
+.mainStackList {
+    width: 100%;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    padding: 1% 8%;
+    margin-bottom: 1%;
+}
+
+.destinationInput {
+    width: 100%;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    padding: 2% 3%
+}
+
+.searchListHeading {
+    font-weight: bolder !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    text-align: start;
+    text-transform: capitalize;
+}
+
+.searchBtnist {
+    background-color: #132a13 !important;
+    color: #ecf39e !important;
+    font-weight: bold !important;
+    letter-spacing: 0.09rem !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.searchItemBox {
+    width: 70%;
+    padding: 0rem 1%;
+}
+
+.lsTitle {
+    font-weight: bolder !important;
+    font-size: 120% !important;
+}
+
+.bold {
+    font-weight: bolder !important;
+}
+.bold1{
+    font-weight: bold !important;
+}
+.pad {
+    padding: 0.2rem  0.8rem !important;
+}
+.small {
+    font-size: small !important;
+}
