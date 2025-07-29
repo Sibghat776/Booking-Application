@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-// dotenv.config(); // <-- Yeh line Vercel deployment ke liye zaroori nahi, variables Vercel dashboard se aayenge
+dotenv.config(); // <-- Yeh line Vercel deployment ke liye zaroori nahi, variables Vercel dashboard se aayenge
 
 import express from "express";
 import mongoose from "mongoose";
@@ -71,15 +71,19 @@ mongoose.connection.on("disconnected", () => {
     console.log("❌ MongoDB disconnected (event listener)");
 });
 
-// Vercel ko batane ke liye ke yeh Express app hai
-// Har request par database connect karein (agar cached na ho)
-app.get('*', async (req, res, next) => {
-    try {
-        await connectDB();
-        next(); // Request ko agle middleware/route par bhej dain
-    } catch (error) {
-        next(error); // Connection error ko error handling middleware par bhej dain
-    }
-});
+connectDB()
+
+
+
+if (process.env.NODE_ENV !== 'production') {
+    connectDB().then(() => {
+        app.listen(5000, () => {
+            console.log("🚀 Server is running on Port 5000 (Local Dev)");
+        });
+    }).catch(err => {
+        console.error("Failed to start server due to DB connection error:", err);
+        process.exit(1);
+    });
+}
 
 export default app;

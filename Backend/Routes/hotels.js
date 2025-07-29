@@ -20,6 +20,6 @@ route.get("/countByType", countByType)
 route.get("/room/:id", getHotelRooms)
 
 // DELETE
-route.delete("/:id", verifyAdmin, deleteHotel)
+route.delete("/delete/:id", verifyAdmin, deleteHotel)
 
 export default route
